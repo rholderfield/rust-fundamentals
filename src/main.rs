@@ -40,4 +40,27 @@ fn main() {
     slogan = slogan + "every time";
 
     println!("{}", slogan);
+
+    let my_inferred_variable = 0;
+
+    // casting
+
+    let float_thirty_two: f32 = 17.2;
+    let unsigned_eight: u8 = 5;
+
+    let cast_unsigned_either = unsigned_eight as f32;
+
+    let result = float_thirty_two / cast_unsigned_either;
+    println!("{}", result);
+
+    // immutable by default... use mut to define as mutable
+
+    // scope and shadow example
+    let scope = "outer scope";
+    println!("{}", scope);
+    {
+        let scope = "inner scope";
+        println!("{}", scope);
+    }
+    println!("{}", scope);
 }
