@@ -27,6 +27,7 @@ fn main() {
     let airline_name2 = format!("{} {}", duck, airlines);
     println!("{}", airline_name2);
 
+    // immutable by default... use mut to define as mutable
     // empty string
     let mut slogan = String::new();
 
@@ -53,8 +54,6 @@ fn main() {
     let result = float_thirty_two / cast_unsigned_either;
     println!("{}", result);
 
-    // immutable by default... use mut to define as mutable
-
     // scope and shadow example
     let scope = "outer scope";
     println!("{}", scope);
@@ -63,4 +62,30 @@ fn main() {
         println!("{}", scope);
     }
     println!("{}", scope);
+
+    // operators
+
+    let modulus = 18 % 7;
+
+    let squared = i32::pow(8, 2);
+    println!("{}", squared);
+
+    // raise to an floating point to integer power
+    let float_integer = f32::powi(6.5, 3);
+    println!("{}", float_integer);
+
+    // raise float to float power
+    let float_float = f32::powf(6.5, 3.14);
+    println!("{}", float_float);
+
+    // logic op examples
+    let have_boarding_pass = true;
+    let have_id = false;
+    let can_board = have_boarding_pass && have_id;
+    println!("{}", can_board);
+    {
+        let have_id = true;
+        let can_board_now = have_boarding_pass && have_id;
+        println!("{}", can_board_now);
+    }
 }
