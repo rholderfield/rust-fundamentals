@@ -115,4 +115,17 @@ fn main() {
 
         println!("The distance between points is {:.1} kilometers", distance);
     }
+
+    // recursion
+    {
+        fn recur(n: i32) -> i32 {
+            if n <= 1 {
+                return n;
+            } else {
+                return n + recur(n - 1);
+            }
+        }
+        let n: i32 = recur(3);
+        println!("{}", n);
+    }
 }
